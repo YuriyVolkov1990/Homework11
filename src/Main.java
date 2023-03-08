@@ -31,15 +31,19 @@ public class Main {
             case 0:
                 if (clientDeviceYear == currentYear) {
                     System.out.println("Установите версию приложения для iOS по ссылке");
-                } else {
+                } else if (clientDeviceYear < currentYear) {
                     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                } else {
+                    System.out.println("Вы из будущего");
                 }
                 break;
             case 1:
                 if (clientDeviceYear == currentYear) {
                     System.out.println("Установите версию приложения для Android по ссылке");
-                } else {
+                } else if (clientDeviceYear < currentYear) {
                     System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                } else {
+                    System.out.println("Вы из будущего");
                 }
                 break;
             default:
