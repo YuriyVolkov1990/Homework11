@@ -49,24 +49,34 @@ public class Main {
                 System.out.println("Такая ОС не предусмотрена");
         }
     }
-    public static void delivery (int deliveryDistance) {
+    //public static void delivery (int deliveryDistance) {
+        //int deliveryTime = 1;
+        //if (deliveryDistance > 0 && deliveryDistance <= 20) {
+            //System.out.println("Потребуется дней: " + deliveryTime);
+        //} else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            //deliveryTime = deliveryTime + 1;
+            //System.out.println("Потребуется дней: " + deliveryTime);
+        //} else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            //deliveryTime = deliveryTime + 2;
+            //System.out.println("Потребуется дней: " + deliveryTime);
+        //} else {
+            //System.out.println("Свыше 100 км доставки нет");
+        //}
+    //}
+    public static int deliveryV1 (int deliveryDistance) {
         int deliveryTime = 1;
-        if (deliveryDistance > 0 && deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + deliveryTime);
-        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+        if (deliveryDistance > 20 && deliveryDistance <= 60) {
             deliveryTime = deliveryTime + 1;
-            System.out.println("Потребуется дней: " + deliveryTime);
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             deliveryTime = deliveryTime + 2;
-            System.out.println("Потребуется дней: " + deliveryTime);
-        } else {
-            System.out.println("Свыше 100 км доставки нет");
         }
+        return deliveryTime;
     }
     public static void main(String[] args) {
         task1();
         task2();
-        task3();
+        //task3();
+        task3v1();
     }
 
     public static void task1() {
@@ -86,11 +96,25 @@ public class Main {
         int year = y.nextInt();
         bankApp(typeOS,year);
     }
-    public static void task3() {
-        System.out.println("Задача 3");
+    //public static void task3() {
+        //System.out.println("Задача 3");
+        //Scanner d = new Scanner(System.in);
+        //System.out.println("Введите расстояние от офиса до адреса доставки");
+        //int distance = d.nextInt();
+        //delivery(distance);
+    //}
+    public static void task3v1() {
+        System.out.println("Задача 3 вариант 2");
         Scanner d = new Scanner(System.in);
         System.out.println("Введите расстояние от офиса до адреса доставки");
         int distance = d.nextInt();
-        delivery(distance);
+        int time = deliveryV1(distance);
+        if (distance > 100) {
+            System.out.println("Свыше 100 км доставки нет");
+        } else if (time == 1) {
+            System.out.println("Для доставки потребуется " + time + " день");
+        } else {
+            System.out.println("Для доставки потребуется " + time + " дня");
+        }
     }
 }
