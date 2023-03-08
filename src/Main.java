@@ -6,22 +6,18 @@ public class Main {
         leapYear = yearCalc % 4;
         leapYearPlus = yearCalc % 400;
         notLeapYear = yearCalc % 100;
-        switch (leapYear) {
-            case 0:
-                switch (leapYearPlus) {
-                    case 0:
-                        System.out.println(yearCalc + " год является високосным");
-                        break;
-                    default:
-                        if (notLeapYear == 0) {
-                            System.out.println(yearCalc + " год не является високосным");
-                        } else {
-                            System.out.println(yearCalc + " год является високосным");
-                        }
+        if (leapYear == 0) {
+            if (leapYearPlus == 0) {
+                System.out.println(yearCalc + " год является високосным");
+            } else {
+                if (notLeapYear == 0) {
+                    System.out.println(yearCalc + " год не является високосным");
+                } else {
+                    System.out.println(yearCalc + " год является високосным");
                 }
-                break;
-            default:
-                System.out.println(yearCalc + " год не является високосным");
+            }
+        } else {
+            System.out.println(yearCalc + " год не является високосным");
         }
     }
     public static void bankApp(int clientOS, int clientDeviceYear) {
