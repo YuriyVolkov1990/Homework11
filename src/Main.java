@@ -1,4 +1,3 @@
-import javax.lang.model.element.VariableElement;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class Main {
@@ -50,9 +49,24 @@ public class Main {
                 System.out.println("Такая ОС не предусмотрена");
         }
     }
+    public static void delivery (int deliveryDistance) {
+        int deliveryTime = 1;
+        if (deliveryDistance > 0 && deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            deliveryTime = deliveryTime + 1;
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            deliveryTime = deliveryTime + 2;
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else {
+            System.out.println("Свыше 100 км доставки нет");
+        }
+    }
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     public static void task1() {
@@ -71,5 +85,12 @@ public class Main {
         Scanner y = new Scanner(System.in);
         int year = y.nextInt();
         bankApp(typeOS,year);
+    }
+    public static void task3() {
+        System.out.println("Задача 3");
+        Scanner d = new Scanner(System.in);
+        System.out.println("Введите расстояние от офиса до адреса доставки");
+        int distance = d.nextInt();
+        delivery(distance);
     }
 }
