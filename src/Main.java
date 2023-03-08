@@ -34,7 +34,7 @@ public class Main {
                 } else if (clientDeviceYear < currentYear) {
                     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
                 } else {
-                    System.out.println("Вы из будущего");
+                    System.out.println("Вы из будущего, зачем вам это приложение?");
                 }
                 break;
             case 1:
@@ -43,7 +43,7 @@ public class Main {
                 } else if (clientDeviceYear < currentYear) {
                     System.out.println("Установите облегченную версию приложения для Android по ссылке");
                 } else {
-                    System.out.println("Вы из будущего");
+                    System.out.println("Вы из будущего, зачем вам это приложение?");
                 }
                 break;
             default:
