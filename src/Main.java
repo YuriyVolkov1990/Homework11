@@ -84,14 +84,14 @@ public class Main {
     }
     public static void task2() {
         System.out.println("Задача 2");
+        System.out.println("Введите тип операционной системы числом: iOS - 0, Android - 1");
         Scanner t = new Scanner(System.in);
-        System.out.println("Введите тип операционной системы: iOS - 0, Android - 1");
         int typeOS = t.nextInt();
         System.out.println("Введите год выпуска устройства");
         Scanner y = new Scanner(System.in);
         int year = y.nextInt();
-        bankApp(typeOS,year);
-    }
+        bankApp(typeOS, year);
+        }
     //public static void task3() {
         //System.out.println("Задача 3");
         //Scanner d = new Scanner(System.in);
